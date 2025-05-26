@@ -3,6 +3,11 @@
 
 ## Integrantes
 
+[Maicol Linares](https://github.com/Maiik14)
+
+[Ana Maria Zambrano](https://github.com/anazambranolozano)
+
+[Sergio Florido](https://github.com/sergioflorido)
 
 ## Nombre del proyecto: 
 
