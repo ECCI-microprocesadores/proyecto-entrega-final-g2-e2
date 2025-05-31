@@ -81,8 +81,18 @@ Protección contra timeout en la medición para evitar bloqueos si no hay eco.
 
 ![MONTAJE](/IMAGENES/MONTAJE.jpeg)
 
-
+![DIAGRAMA MONTAJE1](/IMAGENES/DIAGRAMA%20MONTAJE1.png)
 ## Conclusiones
 
+
+`[1]` La comunicación entre el microcontrolador PIC18F45K22, el sensor y la pantalla fue fluida gracias a una programación adecuada y al uso correcto de pines y retardos.
+
+
+`[2]` Aprendimos que medir el tiempo que tarda el sonido en regresar al sensor es clave para obtener una distancia precisa, y que pequeñas variaciones en este tiempo pueden afectar el resultado final.
+
+`[3]` A pesar de que el sistema es sencillo, puede ser la base para aplicaciones prácticas como alarmas de proximidad, mediciones automáticas o sistemas de seguridad.
+
+
+`[4]` Este proyecto permitió aplicar conocimientos de programación en C, manejo de periféricos del PIC, y electrónica básica, lo que refuerza el aprendizaje de una manera muy práctica y motivadora.
 
 <!-- Crear una carpeta src e incluir en ella los códigos y/o el proyecto de mplab-->
