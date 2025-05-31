@@ -82,8 +82,10 @@ Protección contra timeout en la medición para evitar bloqueos si no hay eco.
 ![MONTAJE](/IMAGENES/MONTAJE.jpeg)
 
 ![DIAGRAMA MONTAJE1](/IMAGENES/DIAGRAMA%20MONTAJE1.png)
-## Conclusiones
 
+![VIDEO DEL MONTAJE Y CODIGO](https://github.com/ECCI-microprocesadores/proyecto-entrega-final-g2-e2/blob/main/IMAGENES/proy.mp4)
+
+## Conclusiones
 
 `[1]` La comunicación entre el microcontrolador PIC18F45K22, el sensor y la pantalla fue fluida gracias a una programación adecuada y al uso correcto de pines y retardos.
 
