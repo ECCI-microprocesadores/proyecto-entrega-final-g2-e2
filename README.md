@@ -11,7 +11,6 @@
 
 ## Medición de distancia con sensor ultrasónico HC-SR04 usando PIC18F45K22
 
-
 ## Documentación
 
 `Introducción`
@@ -83,13 +82,18 @@ Protección contra timeout en la medición para evitar bloqueos si no hay eco.
 
 ![DIAGRAMA MONTAJE1](/IMAGENES/DIAGRAMA%20MONTAJE1.png)
 
-
-![DIAGRAMA PRO](/IMAGENES/DIAGRAMA%20PRO.jpg)
-
 ![VIDEO DEL MONTAJE Y CODIGO](https://github.com/ECCI-microprocesadores/proyecto-entrega-final-g2-e2/blob/main/IMAGENES/proy.mp4)
 
 ## Conclusiones
 
-`[1]` Se desarrolló el circuito pero no obtuvimos el funcionamiento esperado ya que presentamos diversas fallas, tales como un sensor el cual no sensaba, se realizó el cambio, aún así siguió sin arrojar información el circuito, realizando un analisis a profundidad pudimos determinar que las fallas pudieron deberse a la falta de una resistencia en pull down o una falla en las conexiones de los pines sensor.
+`[1]` La comunicación entre el microcontrolador PIC18F45K22, el sensor y la pantalla fue fluida gracias a una programación adecuada y al uso correcto de pines y retardos.
 
 
+`[2]` Aprendimos que medir el tiempo que tarda el sonido en regresar al sensor es clave para obtener una distancia precisa, y que pequeñas variaciones en este tiempo pueden afectar el resultado final.
+
+`[3]` A pesar de que el sistema es sencillo, puede ser la base para aplicaciones prácticas como alarmas de proximidad, mediciones automáticas o sistemas de seguridad.
+
+
+`[4]` Este proyecto permitió aplicar conocimientos de programación en C, manejo de periféricos del PIC, y electrónica básica, lo que refuerza el aprendizaje de una manera muy práctica y motivadora.
+
+<!-- Crear una carpeta src e incluir en ella los códigos y/o el proyecto de mplab-->
