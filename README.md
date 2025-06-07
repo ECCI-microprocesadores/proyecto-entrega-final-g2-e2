@@ -83,6 +83,7 @@ Protección contra timeout en la medición para evitar bloqueos si no hay eco.
 ![DIAGRAMA MONTAJE1](/IMAGENES/DIAGRAMA%20MONTAJE1.png)
 
 ![DIAGRAMA PRO](/IMAGENES/DIAGRAMA%20PRO.jpg)
+
 ![VIDEO DEL MONTAJE Y CODIGO](https://github.com/ECCI-microprocesadores/proyecto-entrega-final-g2-e2/blob/main/IMAGENES/proy.mp4)
 
 ## Conclusiones
