@@ -16,31 +16,42 @@
 
 `Introducción`
 
-La medición de distancia es una tarea fundamental en diversas aplicaciones de electrónica y robótica, permitiendo al sistema detectar la proximidad de objetos en su entorno. El sensor ultrasónico HC-SR04 utiliza ondas sonoras para medir la distancia de objetos mediante el tiempo que tarda el eco en regresar, lo cual es interpretado por el microcontrolador PIC18F45K22 para mostrar el valor en una pantalla LCD.
+Cuando hicimos la elección de este proyecto, queríamos medir distancias sin tocar los objetos (como un robot que evita choques) a un bajo costo. Investigando, descubrimos el sensor el HC-SR04, es un sensor económico pero funcional, ya que envía El sensor envía una señal ultrasónica (como un silbido que nosotros no oímos) y espera a que rebote en los objetos para medir el tiempo de retorno.
+
+El truco está en el PIC18F45K22: este microcontrolador no solo calcula el tiempo del eco, sino que también lo convierte en centímetros y lo muestra en una LCD.
 
 `Componentes y Funcionalidades`
 
--Sensor Ultrasónico HC-SR04:
+1. Sensor Ultrasónico HC-SR04:
 
-Envía una señal ultrasónica de 40 kHz.
-Recibe el eco cuando la señal rebota en un objeto.
-Genera un pulso en el pin ECHO cuya duración es proporcional a la distancia al objeto.
-Pines principales: TRIG (entrada para activar el pulso), ECHO (salida que indica duración del eco).
+Lo elegimos porque es fácil de usar y no requiere librerías tan complejas. De sus 4 pines, los pincipales son: 
 
--Microcontrolador PIC18F45K22:
+`TRIG:` Ya que aquí le dijimos: "¡Envía el sonido!" (con un pulso de 10 µs).
 
-Controla el envío del pulso trigger.
-Mide el tiempo del pulso ECHO con retardos en microsegundos.
-Calcula la distancia con la fórmula basada en la velocidad del sonido.
-Controla la pantalla LCD para mostrar resultados en tiempo real.
+`ECHO:` Y ya aquí nos responde: "¡El eco tardó X microsegundos en volver!".
 
--Pantalla LCD 16x2:
-Interfaz en modo 4 bits para optimizar el uso de pines.
-Visualiza la distancia en centímetros.
-Controlada mediante pines RC0 a RC5 del PIC.
+![SENSOR](/IMAGENES/SENSOR.png)
 
--I2C (Interfaz preparada):
-Código base para inicializar y controlar comunicación I2C, útil para futuras ampliaciones.
+2. Microcontrolador PIC18F45K22:
+
+Este microcontrolador coordinó todo el proceso de medición:
+
+Generó el disparo inicial
+Envíó un pulso preciso de 10µs al pin TRIG para activar el sensor
+
+Implementamos esto usando los temporizadores del PIC para garantizar la exactitud del pulso.
+
+![FORMULA](/IMAGENES/FORMULA.png)
+
+3. Pantalla LCD 16x2:
+
+Inicialmente no arrojaba nada en la LCD, sin embargo hicimos algunos ajustes a uan parte del código para que funcionara, utilizando los pines RC0 a RC5 del PIC.
+
+![LCD2](/IMAGENES/LCD2.png)
+
+4. I2C:
+
+Código fundamental para configurar y manejar la comunicación I2C, pensado en posibles expansiones a futuro.
 
 `Descripción del Software`
 
