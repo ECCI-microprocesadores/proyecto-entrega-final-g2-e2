@@ -52,42 +52,28 @@ Inicialmente no arrojaba nada en la LCD, sin embargo hicimos algunos ajustes a u
 
 Código fundamental para configurar y manejar la comunicación I2C, pensado en posibles expansiones a futuro.
 
+`Descripción de los códigos`
 
+[ULTRASONICO.h](/SRC/ultrasonico.h)
 
-`Descripción del Software`
+[ULTRASONICO.c](/SRC/ultrasonico.c)
 
--Inicialización:
-Se configuran los puertos de entrada/salida, se inicializa la pantalla LCD, y se prepara el sensor ultrasónico.
+- TRISB: Es un registro de dirección de datos del puerto B en el cual si el bit está en 1, el pin se comporta como entrada; y si está en 0, se comporta como ua salida.
 
--Funcionamiento:
+- LATB: Es el registro que permite el control de la salida del puerto B que en estebcaso sería la escritura.
 
-Se envía un pulso trigger de 10 microsegundos.
-El pin ECHO se pone en alto durante el tiempo que tarda el eco en regresar.
-Se mide la duración de este pulso.
-Se calcula la distancia con la fórmula:
+- PORTB: En este caso es el registro que nos permite leer el estado lógico actual en los pines del puerto B que en este caso sería la lectura.
 
-`Distancia (cm)=(Duracion (µs)×0.0343)/2`
+- Medición de distancia (Get_Distance_cm)
 
-​El resultado se muestra en la pantalla LCD.
-Se actualiza la medición cada 400 ms.
+Genera un pulso de 10 us en el pin TRIG, seguido de estoespera a que el pin ECHO (PORTB1) se encuentre en estado alto(1)
 
--Control del LCD:
+Mide cuánto tiempo permanece este en alto (con retrasos de 1 us), aumentando la variable time.
 
-En modo 4 bits para reducir número de pines.
-Funciones para comandos, escritura de caracteres y cadenas, posicionamiento del cursor.
+Si se pasa de30 ms, sale por timeout.
 
--Manejo del I2C:
+Se calcula la distancia en cm usando:
 
-Funciones básicas para iniciar, detener y enviar datos.
-Código preparado para futuras implementaciones, aunque en este proyecto no es usado activamente.
-
-`Detalles Técnicos del Código`
-
-Uso de retardos (__delay_us, __delay_ms) para temporización precisa.
-Lectura directa de pines para detectar el pulso de eco.
-Control de bits individuales para la interfaz LCD.
-Configuración del PIC18F45K22 para oscilador interno a 16 MHz.
-Protección contra timeout en la medición para evitar bloqueos si no hay eco.
 
 ## Diagramas
 
