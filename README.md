@@ -52,6 +52,8 @@ Inicialmente no arrojaba nada en la LCD, sin embargo hicimos algunos ajustes a u
 
 Código fundamental para configurar y manejar la comunicación I2C, pensado en posibles expansiones a futuro.
 
+
+
 `Descripción del Software`
 
 -Inicialización:
